@@ -1,0 +1,9 @@
+.card {
+  width: 9rem;
+  height: 9rem;
+}
+
+.card-body {
+  padding-bottom: 1rem;
+  padding-left: 0;
+}

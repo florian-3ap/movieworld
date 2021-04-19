@@ -1,0 +1,7 @@
+<div *ngIf="movieDetails !== null" class="card">
+  <img class="card-img-top" src="{{imageUrl}}" alt="Movie poster image">
+  <div class="card-body">
+    <h6 class="card-title">{{movieDetails.title}}</h6>
+    <p class="card-subtitle">{{movieDetails.release_date |  date :'mediumDate'}}</p>
+  </div>
+</div>
