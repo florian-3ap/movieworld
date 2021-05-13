@@ -1,9 +1,14 @@
 .card {
-  width: 9rem;
-  height: 9rem;
+  width: 12rem;
+  height: auto;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.card-img-top {
+  object-fit: cover;
 }
 
 .card-body {
-  padding-bottom: 1rem;
-  padding-left: 0;
+  padding: 1rem;
 }

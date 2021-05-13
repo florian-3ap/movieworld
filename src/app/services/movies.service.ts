@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_BASE_URL, API_KEY, ConfigurationResponse } from '../models/tmdb.model';
 import { Observable } from 'rxjs';
-import { NowPlayingResponse } from '../models/movies.model';
+import { Movie, MovieDetails, MovieResponse } from '../models/movies.model';
 import { RequestQueryParam } from '../models/query.model';
 
 @Injectable({
@@ -24,11 +24,15 @@ export class MoviesService {
     return this.configuration;
   }
 
-  public fetchNowPlaying(language: string, page: number, region: string): Observable<NowPlayingResponse> {
-    return this.http.get<NowPlayingResponse>(MoviesService.getUrl(`movie/now_playing`, [
+  public fetchNowPlaying(language: string, page: number, region: string): Observable<MovieResponse> {
+    return this.http.get<MovieResponse>(MoviesService.getUrl(`movie/now_playing`, [
       {key: 'language', value: language},
       {key: 'page', value: page},
       {key: 'region', value: region},
     ]));
+  }
+
+  public getDetails(movie: Movie): Observable<MovieDetails> {
+    return this.http.get<MovieDetails>(MoviesService.getUrl(`movie/${movie.id}`));
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
-import { Movie, NowPlayingResponse } from '../../models/movies.model';
+import { MovieResponse } from '../../models/movies.model';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +9,7 @@ import { Movie, NowPlayingResponse } from '../../models/movies.model';
 })
 export class HomePageComponent implements OnInit {
 
-  public nowPlaying: Movie[] = [];
+  public nowPlaying: MovieResponse | null = null;
 
   constructor(private moviesService: MoviesService) {
   }
@@ -19,8 +19,8 @@ export class HomePageComponent implements OnInit {
   }
 
   public getNowPlaying = (page: number = 1) => {
-    this.moviesService.fetchNowPlaying('de-CH', page, 'CH').subscribe((response: NowPlayingResponse) => {
-      this.nowPlaying = response.results;
+    this.moviesService.fetchNowPlaying('de-CH', page, 'CH').subscribe((response: MovieResponse) => {
+      this.nowPlaying = response;
     });
-  };
+  }
 }

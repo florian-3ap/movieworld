@@ -12,6 +12,8 @@ import { PopularPageComponent } from './pages/popular-page/popular-page.componen
 import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 import { DiscoverPageComponent } from './pages/discover-page/discover-page.component';
 import { TopRatedPageComponent } from './pages/top-rated-page/top-rated-page.component';
+import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { TopRatedPageComponent } from './pages/top-rated-page/top-rated-page.com
     PopularPageComponent,
     FavoritesPageComponent,
     DiscoverPageComponent,
-    TopRatedPageComponent
+    TopRatedPageComponent,
+    MovieGridComponent,
+    MovieDetailComponent
   ],
   imports: [
+    NgbModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

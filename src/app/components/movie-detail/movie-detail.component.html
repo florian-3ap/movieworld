@@ -1,0 +1,45 @@
+<ng-template #content let-modal>
+  <div *ngIf="movie" class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <img class="movie-img" src="{{imageUrl}}" alt="{{movie.title}}">
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-11">
+              <h1>{{movie.title}}</h1>
+            </div>
+            <div class="col-1">
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="col-12">
+              <p>
+                {{movie.release_date| date:'yyyy'}}
+                <i class="bi bi-dot"></i>
+                {{movie.runtime}} min
+                <i class="bi bi-dot"></i>
+                {{movie.status}}
+                <i class="bi bi-dot"></i>
+                {{ movie.vote_average / 10 | percent }}
+              </p>
+            </div>
+            <div class="col-12">
+              <p>
+                <span class="badge badge-dark" *ngFor="let genre of movie.genres">{{genre.name}}</span>
+              </p>
+            </div>
+            <div class="col-12">
+              <h4>Übersicht</h4>
+            </div>
+            <div class="col-12">
+              {{movie?.overview}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
