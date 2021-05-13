@@ -17,7 +17,7 @@ export class MoviesService {
   }
 
   private static getUrl(uri: string, queryParams: Array<RequestQueryParam> = []): string {
-    return `${API_BASE_URL}/${uri}?api_key=${API_KEY}` + queryParams.map(item => `&${item.key}=${item.value}`);
+    return `${API_BASE_URL}/${uri}?api_key=${API_KEY}` + queryParams.map(item => `&${item.key}=${item.value}`).join('');
   }
 
   public getConfiguration(): Observable<ConfigurationResponse> {
@@ -34,5 +34,13 @@ export class MoviesService {
 
   public getDetails(movie: Movie): Observable<MovieDetails> {
     return this.http.get<MovieDetails>(MoviesService.getUrl(`movie/${movie.id}`));
+  }
+
+  public getPopularMovies(language: string, page: number, region: string): Observable<MovieResponse> {
+    return this.http.get<MovieResponse>(MoviesService.getUrl(`movie/popular`, [
+      {key: 'language', value: language},
+      {key: 'page', value: page},
+      {key: 'region', value: region},
+    ]));
   }
 }

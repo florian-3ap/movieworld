@@ -1,29 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Movieworld</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <i class="bi bi-camera-reels"></i>
+      <span>Movieworld</span>
+    </a>
 
-  <div id="navbarSupportedContent" class="collapse navbar-collapse">
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="popular">Beliebteste</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="top-rated">Bestbewertet</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="favorites">Favoriten</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="discover">Entdecken</a>
-      </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="popular">Beliebteste</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="top-rated">Bestbewertet</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="favorites">Favoriten</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="discover">Entdecken</a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
   </div>
 </nav>

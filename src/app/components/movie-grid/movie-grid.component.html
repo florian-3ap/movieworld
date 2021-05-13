@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div *ngIf="input" class="container-fluid">
   <div class="row">
     <div class="col-12">
       <h1>{{title}}</h1>
@@ -7,10 +7,20 @@
   <div class="row">
     <div class="col-12">
       <div class="card-deck">
-        <app-movie-card *ngFor="let movie of input?.results" [movie]="movie"
+        <app-movie-card *ngFor="let movie of input.results" [movie]="movie"
                         (onClick)="openModal($event)"
         ></app-movie-card>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <ngb-pagination class="d-flex justify-content-end"
+                      [maxSize]="6"
+                      [(page)]="input.page"
+                      [collectionSize]="input.total_pages"
+                      (pageChange)="pageChange($event)">
+      </ngb-pagination>
     </div>
   </div>
   <app-movie-detail></app-movie-detail>

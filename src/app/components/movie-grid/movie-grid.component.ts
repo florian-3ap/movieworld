@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Movie, MovieResponse } from '../../models/movies.model';
 import { MovieDetailComponent } from '../movie-detail/movie-detail.component';
 
@@ -14,6 +14,8 @@ export class MovieGridComponent {
 
   @Input() title = '';
 
+  @Output() onPageChange: EventEmitter<number> = new EventEmitter<number>();
+
   public input: MovieResponse | null = null;
 
   @Input()
@@ -26,5 +28,9 @@ export class MovieGridComponent {
 
   public openModal(movie: Movie | null): void {
     this.detailComponent.showModal(movie);
+  }
+
+  public pageChange(page: number): void {
+    this.onPageChange.emit(page);
   }
 }
