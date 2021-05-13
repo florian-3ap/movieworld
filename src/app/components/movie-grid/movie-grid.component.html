@@ -15,8 +15,11 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <ngb-pagination class="d-flex justify-content-end"
-                      [maxSize]="6"
+      <ngb-pagination class="pagination d-flex justify-content-end"
+                      [rotate]="true"
+                      [ellipses]="false"
+                      [boundaryLinks]="true"
+                      [maxSize]="5"
                       [(page)]="input.page"
                       [collectionSize]="input.total_pages"
                       (pageChange)="pageChange($event)">
