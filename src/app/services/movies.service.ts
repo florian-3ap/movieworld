@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { API_BASE_URL, API_KEY, ConfigurationResponse } from '../models/tmdb.model';
 import { Observable } from 'rxjs';
-import { Movie, MovieDetails, MovieResponse } from '../models/movies.model';
+import { GenreResponse, Movie, MovieDetails, MovieResponse } from '../models/movies.model';
 import { RequestQueryParam } from '../models/query.model';
 
 @Injectable({
@@ -41,6 +41,38 @@ export class MoviesService {
       {key: 'language', value: language},
       {key: 'page', value: page},
       {key: 'region', value: region},
+    ]));
+  }
+
+  public getTopRatedMovies(language: string, page: number, region: string): Observable<MovieResponse> {
+    return this.http.get<MovieResponse>(MoviesService.getUrl(`movie/top_rated`, [
+      {key: 'language', value: language},
+      {key: 'page', value: page},
+      {key: 'region', value: region},
+    ]));
+  }
+
+  public getGenres(language: string): Observable<GenreResponse> {
+    return this.http.get<GenreResponse>(MoviesService.getUrl(`genre/movie/list`, [
+      {key: 'language', value: language},
+    ]));
+  }
+
+  public getById(id: number): Observable<Movie> {
+    return this.http.get<Movie>(MoviesService.getUrl(`movie/${id}`));
+  }
+
+  public discover(genre: number, page: number): Observable<MovieResponse> {
+    return this.http.get<MovieResponse>(MoviesService.getUrl(`discover/movie`, [
+      {key: 'with_genres', value: genre},
+      {key: 'page', value: page},
+    ]));
+  }
+
+  public find(search: string, page: number): Observable<MovieResponse> {
+    return this.http.get<MovieResponse>(MoviesService.getUrl(`search/movie`, [
+      {key: 'query', value: search},
+      {key: 'page', value: page},
     ]));
   }
 }

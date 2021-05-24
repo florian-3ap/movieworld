@@ -6,3 +6,13 @@
 .badge {
   margin-right: 0.25rem;
 }
+
+.bi-heart {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.bi-heart-fill {
+  font-size: 30px;
+  cursor: pointer;
+}

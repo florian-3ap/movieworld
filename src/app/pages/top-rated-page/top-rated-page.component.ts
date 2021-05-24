@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieResponse } from '../../models/movies.model';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'app-top-rated-page',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopRatedPageComponent implements OnInit {
 
-  constructor() { }
+  public nowPlaying: MovieResponse | null = null;
 
-  ngOnInit(): void {
+  constructor(private moviesService: MoviesService) {
   }
 
+  ngOnInit(): void {
+    this.getTopRatedMovies();
+  }
+
+  public getTopRatedMovies = (page: number = 1) => {
+    this.moviesService.getTopRatedMovies('de-CH', page, 'CH').subscribe((response: MovieResponse) => {
+      this.nowPlaying = response;
+    });
+  };
 }

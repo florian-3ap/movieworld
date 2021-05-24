@@ -14,6 +14,7 @@ import { DiscoverPageComponent } from './pages/discover-page/discover-page.compo
 import { TopRatedPageComponent } from './pages/top-rated-page/top-rated-page.component';
 import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,14 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     DiscoverPageComponent,
     TopRatedPageComponent,
     MovieGridComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
   ],
   imports: [
     NgbModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,6 +37,10 @@
             <div class="col-12">
               {{movie?.overview}}
             </div>
+            <div class="col-12">
+              <i *ngIf="!isLiked" class="bi bi-heart" (click)="like()"></i>
+              <i *ngIf="isLiked" class="bi bi-heart-fill" (click)="unlike()"></i>
+            </div>
           </div>
         </div>
       </div>

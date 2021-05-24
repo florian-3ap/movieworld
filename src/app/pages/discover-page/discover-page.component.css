@@ -1,0 +1,12 @@
+.container {
+  margin-top: 1.5rem;
+}
+
+.card {
+  width: 5rem;
+}
+
+#genreDropdown {
+  width: 10rem;
+  vertical-align: middle
+}

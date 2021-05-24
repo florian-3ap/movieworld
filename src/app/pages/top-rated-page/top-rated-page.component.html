@@ -1,1 +1,4 @@
-<p>top-rated-page works!</p>
+<div class="container">
+  <app-movie-grid title="Bestbewertet" [movies]="nowPlaying"
+                  (onPageChange)="getTopRatedMovies($event)"></app-movie-grid>
+</div>

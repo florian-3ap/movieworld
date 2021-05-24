@@ -21,6 +21,10 @@ export interface Movie {
   vote_average: number;
 }
 
+export interface GenreResponse {
+  genres: Array<Genre>;
+}
+
 export interface Genre {
   id: number;
   name: string;
@@ -34,6 +38,7 @@ export interface ProductionCompany {
 }
 
 export interface MovieDetails {
+  id: number;
   adult: boolean;
   backdrop_path: string | null;
   budget: number;

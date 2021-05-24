@@ -1,1 +1,4 @@
-<p>favorites-page works!</p>
+<div class="container">
+  <app-movie-grid title="Meine Favoriten" [movies]="favorites"
+                  (onPageChange)="getFavorites()"></app-movie-grid>
+</div>

@@ -1,1 +1,23 @@
-<p>discover-page works!</p>
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <h1>Genre auswählen</h1>
+      </div>
+      <div class="col-8">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-secondary" id="genreDropdown"
+                  ngbDropdownToggle>{{selectedGenre?.name}}</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button *ngFor="let genre of genres" ngbDropdownItem (click)="selectGenre(genre)">{{genre.name}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="movies && selectedGenre">
+    <app-movie-grid title="{{selectedGenre.name}} Filme" [movies]="movies"
+                    (onPageChange)="discoverGenre($event)"></app-movie-grid>
+  </div>
+</div>
