@@ -5,6 +5,7 @@ import { PopularPageComponent } from './pages/popular-page/popular-page.componen
 import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
 import { DiscoverPageComponent } from './pages/discover-page/discover-page.component';
 import { TopRatedPageComponent } from './pages/top-rated-page/top-rated-page.component';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'discover',
     component: DiscoverPageComponent
+  },
+  {
+    path: 'search',
+    component: SearchPageComponent
   },
 ];
 

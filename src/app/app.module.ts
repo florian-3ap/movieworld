@@ -14,7 +14,8 @@ import { DiscoverPageComponent } from './pages/discover-page/discover-page.compo
 import { TopRatedPageComponent } from './pages/top-rated-page/top-rated-page.component';
 import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPageComponent } from './pages/search-page/search-page.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TopRatedPageComponent,
     MovieGridComponent,
     MovieDetailComponent,
+    SearchPageComponent,
   ],
   imports: [
     NgbModule,
@@ -35,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
